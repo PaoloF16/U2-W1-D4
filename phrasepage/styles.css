@@ -1,0 +1,93 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ececec;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card {
+      --bg-color: #111;
+      background: var(--bg-color);
+      border-radius: 24px;
+      padding: 30px 40px;
+      width: fit-content;
+      max-width: 95%;
+    }
+
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: 24px;
+      line-height: 1.4;
+      color: #d2c7ba;
+      font-weight: 500;
+    }
+
+    .loader p {
+      margin: 0;
+    }
+
+    .words {
+      height: 34px;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      min-width: 190px;
+    }
+
+    .word-track {
+      display: flex;
+      flex-direction: column;
+      animation: spin 6s infinite;
+    }
+
+    .word {
+      height: 34px;
+      line-height: 34px;
+      color: #956afa;
+      font-weight: 600;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    @keyframes spin {
+      0%, 20% {
+        transform: translateY(0);
+      }
+      30%, 50% {
+        transform: translateY(-34px);
+      }
+      60%, 80% {
+        transform: translateY(-68px);
+      }
+      90%, 100% {
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .loader {
+        flex-direction: column;
+        font-size: 18px;
+      }
+
+      .words {
+        min-width: auto;
+      }
+
+      .word {
+        text-align: center;
+      }
+    }

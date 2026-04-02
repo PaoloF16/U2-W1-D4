@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loader Text</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e9e9e9;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card {
+      --bg-color: #111;
+      background-color: var(--bg-color);
+      padding: 1.5rem 2rem;
+      border-radius: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      max-width: 90%;
+    }
+
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgb(180, 180, 180);
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 1.3;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .loader p {
+      margin: 0;
+    }
+
+    .words {
+      height: 32px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .words::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        var(--bg-color) 10%,
+        transparent 30%,
+        transparent 70%,
+        var(--bg-color) 90%
+      );
+      pointer-events: none;
+    }
+
+    .word {
+      display: block;
+      height: 32px;
+      line-height: 32px;
+      color: #956afa;
+      padding-left: 6px;
+      animation: spin 6s infinite;
+    }
+
+    @keyframes spin {
+      0%, 15% {
+        transform: translateY(0);
+      }
+      20%, 35% {
+        transform: translateY(-32px);
+      }
+      40%, 55% {
+        transform: translateY(-64px);
+      }
+      60%, 75% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .loader {
+        font-size: 18px;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .words {
+        height: 28px;
+      }
+
+      .word {
+        height: 28px;
+        line-height: 28px;
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="loader">
+      <p>
+        Realizziamo con cura, passione, attenzione, meticolosità,
+        precisione ed un pizzico di originalità
+      </p>
+
+      <div class="words">
+        <span class="word">Single page app</span>
+        <span class="word">Interfacce Web</span>
+        <span class="word">App Nativo</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

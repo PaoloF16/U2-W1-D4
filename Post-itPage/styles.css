@@ -1,0 +1,150 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f2efe7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+
+.page {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
+
+.postit-area {
+  display: grid;
+  grid-template-columns: repeat(2, 240px);
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.postit {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  padding: 24px;
+  background: #fff4a8;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+  border-radius: 6px;
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+/* VARIACIONES DE COLOR */
+.postit-1 {
+  background: #fff4a8;
+  transform: rotate(-3deg);
+}
+
+.postit-2 {
+  background: #ffd6d6;
+  transform: rotate(2deg);
+}
+
+.postit-3 {
+  background: #d7f7c8;
+  transform: rotate(-2deg);
+}
+
+.postit-4 {
+  background: #cfe8ff;
+  transform: rotate(3deg);
+}
+
+/* TITULO Y TEXTO */
+.postit-title {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: #333333;
+}
+
+.postit-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444444;
+}
+
+/* ESQUINA DOBLADA */
+.postit-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0 solid rgba(255, 255, 255, 0.9);
+  border-left: 0 solid transparent;
+  transition: all 0.35s ease;
+  filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, 0.12));
+}
+
+/* HOVER: LEVANTAR ESQUINA */
+.postit:hover {
+  transform: scale(1.03) rotate(0deg);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+}
+
+.postit:hover .postit-corner {
+  border-top: 50px solid rgba(255, 255, 255, 0.95);
+  border-left: 50px solid transparent;
+}
+
+/* ANIMACION DE CAIDA */
+.is-falling {
+  animation: fallDown 0.9s ease-in forwards;
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateY(10px) rotate(4deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(120px) rotate(12deg);
+    opacity: 0.9;
+  }
+
+  80% {
+    transform: translateY(320px) rotate(24deg);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(520px) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .postit-area {
+    grid-template-columns: 1fr;
+  }
+
+  .postit {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
