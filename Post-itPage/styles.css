@@ -8,7 +8,7 @@
 
 body {
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: "Indie Flower", cursive, Arial, sans-serif;
   background: #f2efe7;
   display: flex;
   justify-content: center;
@@ -49,22 +49,22 @@ body {
 /* VARIACIONES DE COLOR */
 .postit-1 {
   background: #fff4a8;
-  transform: rotate(-3deg);
+  transform: rotate(-6deg);
 }
 
 .postit-2 {
   background: #ffd6d6;
-  transform: rotate(2deg);
+  transform: rotate(4deg);
 }
 
 .postit-3 {
   background: #d7f7c8;
-  transform: rotate(-2deg);
+  transform: rotate(-4deg);
 }
 
 .postit-4 {
   background: #cfe8ff;
-  transform: rotate(3deg);
+  transform: rotate(6deg);
 }
 
 /* TITULO Y TEXTO */
